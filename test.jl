@@ -2,7 +2,6 @@
 Source:
 https://julia.quantecon.org/getting_started_julia/julia_by_example.html
 """
-
 using Plots
 
 n = 100
