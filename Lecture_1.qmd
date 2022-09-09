@@ -114,16 +114,19 @@ Non negativity: x, y >=0
 
 ### Implementing in Julia
 
-open `first_LP.jl' in VSCode
+open `first_LP.jl` in VSCode
 Inspect it
 
 run it in the julia REPL using 
 
 include("first_LP.jl")
 
+### Final matters
 BEFORE CLASS ENDS, in the REPL, do this:
 
 save_REPL_history("Lecture_1_REPL.jl")
+
+Clean the file a bit if needed.
 
 Then, GIT commit, GIT Push
 
