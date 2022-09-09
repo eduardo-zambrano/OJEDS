@@ -9,4 +9,3 @@ f(x) = x^2
 ϵ = randn(n)
 plot(f.(ϵ), label="ϵ²")
 plot!(ϵ, label="ϵ")
-
