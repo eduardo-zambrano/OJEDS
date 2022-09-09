@@ -1,4 +1,6 @@
 ## Adapted from https://github.com/chkwon/jpor_codes/blob/master/chap2/LP1.jl ##
+## See also https://www.globaltechcouncil.org/data-science/a-quick-guide-to-linear-programming-for-data-science/
+
 
 using JuMP, GLPK
 
