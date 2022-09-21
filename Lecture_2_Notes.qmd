@@ -1,0 +1,136 @@
+---
+title: "ECON 470 Lecture Notes for Meeting Two"
+format:
+  html:
+    code-fold: true
+---
+
+# The Julia REPL Tutorial
+
+include("REPL_helper.jl");
+using OhMyREPL
+
+## Navigation
+Source: https://github.com/miguelraz/REPLMasteryWorkshop
+
+Basic flow in the Julia mode
+julia> x = 3+3
+6
+Notable points: You can copy/paste input from anywhere into a Julia REPL. Try it now, to make sure you don't need to erase the julia>.
+
+Now, type in:
+
+julia> ans
+
+And notice the ans evaluates to the previously evaluated value.
+
+## Basic Commands
+The manual invites you to try the following:
+
+Ctrl+D, to quit (also written as ^D
+Ctrl+C will interrupt/cancel ongoing actions
+Ctrl+L will clear your entire screen
+
+Alt+Enter will let you type in a newline without evaluating the REPL result. Try the following:
+
+Type the UP Arrow to get to the definition of x. Then press Enter. This scrolls through your REPL history.
+
+Get back to a previous definition in your REPL, press Enter, and then Down. You should notice that you can "get back" to where you started evaluating. 
+
+## Tab
+
+You're about to learn a very powerful tip: Just about everything you can touch in the Julia REPL expands/auto-completes when you use the amazing <TAB>. Try it!
+
+using Lin<TAB> 
+par<TAB>
+parse(<TAB>) # Shows all methods
+parse(Int, <TAB>) # Narrows to all methods that start with Int!
+\alpha<TAB>
+\:boat:<TAB>
+;first<TAB>
+
+## REPL Modes
+There are 4 standard Julia REPL modes:
+
+Julian mode
+Help mode, with ?
+Pkg mode, with ]
+Shell mode, with ;
+
+### Help mode
+
+?parse
+Your prompt should now look like ?> and turn yellow.
+
+?sin
+
+### Shell mode
+This is a "fake" shell mode - ideally best for jumping around directories with cd ~/.julia and cleaning up git stuff really quick. Try this:
+
+#### Can edit, commit and push files without leaving the Julia REPL
+Go into a Package you own
+type ; vim README.md
+Fix a typo, save and quit
+
+[ to save and quit do this: ESC, then :wq <ENTER>]
+
+Commit the file and push to the repo.
+```{shell}
+git add README.md
+git commit -m "Insert comment here"
+git push
+```
+
+I said "fake" because it's not really a shell - it's an emulated version run by Julia (see the code here.
+
+### Pkg mode
+]add X Y Z will add X Y Z packages. Try this:
+]add Diff<TAB>
+It will autocomplete with matching package names in the registry!
+
+]status
+You'll get an info dump of all the packages and the version that they are at in the active environment.
+
+To start an environment, do this:
+
+]activate .
+
+If you want to eagerly download all the dependecies of an environment,
+
+]instantiate
+Will pull them in.
+
+]gc
+To get rid of a bit of cruft you may have accumulated.
+
+
+Important but we will not cover today:
+Revise.jl
+
+#### Tools and packages
+BenchmarkTools.jl
+OhMyREPL.jl,
+UnicodePlots.jl
+PrettyTables.jl (haven't used it)
+
+# VS Code
+1. Explorer
+2. Source control
+3. Extensions
+4. The terminal
+5. Environment (cmd + shift + P)
+6. Open project
+7. Running code (CTRL <ENTER>)
+(use the `test.jl` file to illustrate)
+
+# Introductory Examples
+Source: <https://julia.quantecon.org/getting_started_julia/julia_by_example.html>
+
+# Remember to 
+1. save the REPL session.
+2. save the .jl session.
+3. GIT commit and GIT push at the end of class.
+
+
+
+
