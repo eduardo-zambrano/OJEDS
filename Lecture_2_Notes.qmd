@@ -81,7 +81,7 @@ git commit -m "Insert comment here"
 git push
 ```
 
-I said "fake" because it's not really a shell - it's an emulated version run by Julia (see the code here.
+I said "fake" because it's not really a shell - it's an emulated version run by Julia.
 
 ### Pkg mode
 ]add X Y Z will add X Y Z packages. Try this:
