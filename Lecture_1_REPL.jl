@@ -1,5 +1,7 @@
-using Pkg
-Pkg.activate(".")
+# Run Julia from your OJEDS directory
+# Enter package mode with ]
+# Type `activate .` (don't forget the space and the period)
+# To exit package mode, press <backspace>
 
 include("REPL_helper.jl")
 
@@ -12,4 +14,5 @@ plot!(ϵ,label="ϵ")
 
 include("first_LP.jl")
 
-save_REPL_history("Lecture_1_REPL.jl")
+# The line below saves everything you typed into the REPL inside your current Julia session
+save_REPL_history("Insert_filename_here.jl")
