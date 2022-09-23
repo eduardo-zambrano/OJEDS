@@ -12,8 +12,10 @@ ans
 #;
 #pwd
 #ls
+#<BACKSPACE>
 #?
 #sin
+#<BACKSPACE>
 #;
 #vim README.md
 # Stuff happened inside vim
@@ -21,9 +23,10 @@ ans
 #git add README.md
 #git commit -m "Incorporated Christine's taste in music"
 #git push
+#<BACKSPACE>
 #]
 #status
 #gc
-
+#<BACKSPACE>
 using UnicodePlots
 save_REPL_history("Lecture_2_REPL.jl")
