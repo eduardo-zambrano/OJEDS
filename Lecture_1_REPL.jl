@@ -1,7 +1,7 @@
 # Run Julia from your OJEDS directory
-# Enter package mode with ]
-# Type `activate .` (don't forget the space and the period)
-# To exit package mode, press <backspace>
+#]
+#activate . (don't forget the space and the period)
+#<BACKSPACE>
 
 include("REPL_helper.jl")
 
