@@ -227,7 +227,7 @@ References on independence - dimension inequality
 1. save the REPL session.
 
 ```{julia}
-save_REPL_history("Lecture_5_REPL.jl")
+save_REPL_history("L5_REPL_session.jl")
 ```
 
 2. GIT commit and GIT push at the end of class.
