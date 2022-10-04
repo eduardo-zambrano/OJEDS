@@ -29,4 +29,4 @@ ans
 #gc
 #<BACKSPACE>
 using UnicodePlots
-save_REPL_history("Lecture_2_REPL.jl")
+save_REPL_history("L2_REPL_session.jl")
