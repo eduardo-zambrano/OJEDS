@@ -132,6 +132,97 @@ a = [1,2,-1]; b=[2,0,-3]
 coso(a,b)
 ```
 
+```{julia}
+"""
+Chapter 5
+"""
+
+# Orthonormal vectors
+a1 = [0,0,-1]; a2 = [1,1,0]/sqrt(2); a3 = [1,-1,0]/sqrt(2);
+
+# Check that these vectors form an orthonormal basis
+norm(a1), norm(a2), norm(a3)
+
+a1'*a2, a1'*a3, a2'*a3
+
+# New vector
+x = [1, 2, 3] 
+
+#Get coefficients of x in orthonormal basis
+β1 = a1'*x
+β2 = a2'*x
+β3 = a3'*x
+
+# Expansion of x in basis
+xexp = β1*a1 + β2*a2 + β3*a3
+
+# Gram-Schimdt algorithm
+
+"""
+Input: an array [a[1], a[2], ..., a[k] ], containing the k vectors a₁,..., aₖ.
+If the vectors are linearly independent, it returns the orthonormal array [q[1], ..., q[k]] 
+If the vectors are linearly dependent and the Gram–Schnidt algorithm terminates early in iteration `i`, 
+it returns the array [q[1], ..., q[i] ] of length i.
+"""
+function gram_schmidt(a; tol = 1e-10)
+    
+    q = []
+    for i = 1:length(a)
+        qtilde = a[i]
+        for j = 1:i-1
+            qtilde -= (q[j]'*a[i]) * q[j]
+        end
+        if norm(qtilde) < tol
+            println("Vectors are linearly dependent.")
+            return q
+        end
+        push!(q, qtilde/norm(qtilde))
+        end;
+    return q
+end
+
+# Example (pp. 100-101)
+a = [ [-1, 1, -1, 1], [-1, 3, -1, 3], [1, 3, 5, 7] ]
+
+q = gram_schmidt(a)
+
+# test orthnormality
+zz=[("norm(q[1]:)",norm(q[1])),
+("q[1]'*q[2]:",q[1]'*q[2]),
+("q[1]'*q[3]:",q[1]'*q[3]),
+("norm(q[2]):",norm(q[2])),
+("q[2]'*q[3]:",q[2]'*q[3]),
+("norm(q[3]):",norm(q[3]))]
+
+# recover a1, a2, a3
+
+a1exp = (q[1]'*a[1]) * q[1]
+
+a2exp = (q[1]'*a[2]) * q[1] + (q[2]'*a[2]) * q[2]
+
+a3exp = (q[1]'a[3]) * q[1] + (q[2]'*a[3]) * q[2] + (q[3]'*a[3]) * q[3]
+
+
+"""
+Example of early termination
+If we replace a3 with a linear combination of a1, and a2, the set becomes linearly dependent.
+"""
+b = [ a[1], a[2], 1.3*a[1] + 0.5*a[2] ]
+
+q = gram_schmidt(b)
+
+# Independence - dimension inequality
+three_two_vectors = [ [1,1], [1,2], [-1,1] ];
+q = gram_schmidt(three_two_vectors)
+
+"""
+```
+References on independence - dimension inequality
+<http://www.efgh.com/math/algebra/vector.htm>
+<https://math.stackexchange.com/questions/3208576/understanding-the-proof-of-independence-dimension-inequality>
+"""
+
+
 # Remember to 
 1. save the REPL session.
 
