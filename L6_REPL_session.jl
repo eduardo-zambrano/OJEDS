@@ -1,5 +1,10 @@
+#]
+#activate .
+#<BACKSPACE>
 include("REPL_helper.jl")
-using LinearAlgebra, OhMyREPL
+using OhMyREPL, LinearAlgebra
+
+# Source: https://web.stanford.edu/~boyd/vmls/vmls-julia-companion.pdf
 
 a1 = [0,0,-1]; a2 = [1,1,0]/sqrt(2); a3 = [1,-1,0]/sqrt(2);
 

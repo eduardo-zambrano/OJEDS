@@ -4,6 +4,9 @@
 #<BACKSPACE>
 include("REPL_helper.jl")
 using OhMyREPL
+
+# Source: https://github.com/miguelraz/REPLMasteryWorkshop
+
 x = 3 + 3
 ans
 

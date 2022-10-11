@@ -2,6 +2,9 @@
 #activate .
 include("REPL_helper.jl")
 using OhMyREPL
+
+# Source: https://julia.quantecon.org/getting_started_julia/julia_essentials.html
+
 x = true
 x
 typeof(x)

@@ -5,6 +5,9 @@
 
 include("REPL_helper.jl");
 using OhMyREPL, LinearAlgebra
+
+# Source: https://web.stanford.edu/~boyd/vmls/vmls-julia-companion.pdf
+
 function gram_schmidt(a; tol = 1e-10)
     
     q = []
