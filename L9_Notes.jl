@@ -48,7 +48,9 @@ A = randn(3,3);
 inv(A)
 
 Q, R = qr(A);
+Q
 Q = Matrix(Q);
+Q
 inv(R)*Q'
 
 diff = inv(A) .- inv(R)*Q'
@@ -72,14 +74,14 @@ end
 return x
 end
 
+#   The function triu gives the upper triangular part of a matrix, i.e., it
+#   zeros out the entries below the diagonal.
 R = triu(randn(4,4)) # Random 4x4 upper triangular matrix
 
 b = rand(4);
 x = back_subst(R,b);
 norm(R*x-b)
 
-#   The function triu gives the upper triangular part of a matrix, i.e., it
-#   zeros out the entries below the diagonal.
 # 
 #   Backslash notation. The Julia command for solving a set of linear equations
 #   Ax = b is x=A\b. This is faster than x=inv(A)*b, which first computes the
@@ -93,19 +95,13 @@ norm(b-A*x1)
 @time x2 = inv(A)*b;
 norm(b-A*x2)
 
-#   Julia chooses a suitable algorithm for solving the equation after checking
-#   the properties of A. For example, it will use back substitution if A is
-#   lower triangular. 
-
-
 #   11.5 Pseudo-inverse
 #   –––––––––––––––––––––
 # 
 #   In Julia, the pseudo-inverse of a matrix A is obtained with pinv(A). We
 #   compute the pseudo-inverse for the example on page 216
 #   (https://web.stanford.edu/~boyd/vmls/vmls.pdf#section*.270) of VMLS using
-#   the pinv function, and via the formula A† = R^{−1}Q^{T} , where A = QR is
-#   the QR factorization of A.
+#   the pinv function, and via the QR factorization of A.
 
 A = [-3 -4; 4 6; 1 1]
 pinv(A)
