@@ -14,6 +14,7 @@ I_O =[1131	25480	1	607	710	762;
 3637	96115	31027	65755	193176	34223;
 1552	14986	1747	11225	15058	22070]
 
+
 # Sectors:
 # 1. Agriculture. Products of agriculture, forestry, fisheries and aquaculture
 # 2. Manufacturing. Products of mining and quarrying, manufactured products and energy products.
@@ -33,16 +34,16 @@ y = [15219
 
 
 # Total production by Industry
-x = [sum(I_O[i,:])+y[i] for i in 1:6]
+x = [sum(I_O[i,:])+y[i] for i in 1:6];
 
 # Input - Output Coefficients (page 485)
-A = hcat([I_O[:,i] / x[i] for i in 1:6]...)
+A = hcat([I_O[:,i] / x[i] for i in 1:6]...);
 
 # Leontief matrix (page 487)
-I - A
+I - A;
 
 # Leontief Inverse (page 488)
-(I-A)^-1
+(I-A)^-1;
 
 # Baseline
 (I-A)^-1 * y
@@ -80,8 +81,11 @@ B*(I-A)^-1
 Y = Diagonal(y)
 
 # Emission content of final demand
- B*(I-A)^-1 * Y
-  p 
+
+B*(I-A)^-1 * Y
+
+# Private emissions content
+p 
 
 # Remember to 
 # 1. save the REPL session.
