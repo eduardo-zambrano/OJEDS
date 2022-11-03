@@ -1,5 +1,5 @@
-using VMLS
-using LinearAlgebra
+include("REPL_helper.jl");
+using OhMyREPL, LinearAlgebra
 
 #   Chapter 12
 #   ============
@@ -79,3 +79,10 @@ vdes = 1e3 * ones(m);
 s = R \ vdes
 
 rms(R*s - vdes)
+
+# Remember to 
+# 1. save the REPL session.
+
+save_REPL_history("L10_REPL_session.jl")
+
+# 2. GIT commit and GIT push at the end of class.
