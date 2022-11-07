@@ -78,6 +78,8 @@ m, n = size(R);
 vdes = 1e3 * ones(m);
 s = R \ vdes
 
+sum(s)
+
 rms(R*s - vdes)
 
 # Remember to 
