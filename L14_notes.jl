@@ -18,6 +18,13 @@ plot!([0, 800], [0, 800], linestyle = :dash);
 plot!(xlims = (0,800), ylims = (0,800), size = (500,500));
 plot!(xlabel = "Actual price", ylabel = "Predicted price (simple model)")
 
+# Housing Prices - Understanding the orthogonalization embedded in least squares
+area_hat = [ones(N) beds] *([ones(N) beds ] \ area); 
+area_resid = area - area_hat;
+area_resid'*area_hat
+
+β_new = [ ones(N) area_resid ] \ price
+
 # Housing Prices - seven features plus the constant term
 condo = D["condo"];
 location = D["location"];
@@ -31,5 +38,3 @@ scatter(price, X_large*θ , lims = (0,800));
 plot!([0, 800], [0, 800], linestyle = :dash);
 plot!(xlims = (0,800), ylims = (0,800), size = (500,500));
 plot!(xlabel = "Actual price", ylabel = "Predicted price (more complex model")
-
-# And Waldo was here
