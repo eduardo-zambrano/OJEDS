@@ -31,3 +31,11 @@ vdes_R = vdes - R*s
 # The constrained solution
 x_R = A_R \ vdes_R
 x = S*x_R + s
+
+
+# Remember to 
+# 1. save the REPL session.
+
+save_REPL_history("L15_REPL_session.jl")
+
+# 2. GIT commit and GIT push at the end of class.
