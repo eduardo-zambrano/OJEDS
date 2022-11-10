@@ -33,24 +33,17 @@ end
 npts = 100;
 lambdas = 10 .^ linspace(-6,6,npts);
 thetas = zeros(p,npts);
-for k = 1:npts
-    # theta = mols_solve([ A, [zeros(p-1) eye(p-1)]],
-    #     [ ytrain, zeros(p-1) ], [1, lambdas[k]])
-
+for k = 1:npts    
     theta = mols_solve([ X_large, [zeros(p-1) eye(p-1)]],
         [ price, zeros(p-1) ], [1, lambdas[k]])
     thetas[:,k] = theta;
 end;
 
-
 # Plot coefficients
 plot(lambdas, thetas', label = ["θ₁" "θ₂" "θ₃" "θ₄" "θ₅" "θ₆" "θ₇" "θ₈"], xscale = :log10)
 plot!(xlabel = "lambda", xlim = (1e-6, 1e6))
 
-
 # Remember to 
 # 1. save the REPL session.
-
 save_REPL_history("L16_REPL_session.jl")
-
 # 2. GIT commit and GIT push at the end of class.
