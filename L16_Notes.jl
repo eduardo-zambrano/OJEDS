@@ -10,8 +10,9 @@ beds = D["beds"];
 condo = D["condo"];
 location = D["location"];
 price = D["price"];
-N, p = size(X_large)
+N = size(price)
 X_large = hcat(ones(N), area, max.(area.-1.5, 0), beds, condo, location .== 2, location .== 3, location .== 4 );
+
 θ = X_large \ price
 
 #   15.1 Multi-objective least squares
@@ -30,6 +31,7 @@ function mols_solve(As,bs,lambdas)
     return Atil \ btil
 end
 
+N, p = size(X_large)
 npts = 100;
 lambdas = 10 .^ linspace(-6,6,npts);
 thetas = zeros(p,npts);
