@@ -1,7 +1,8 @@
 # Source: https://web.stanford.edu/~boyd/vmls/vmls-julia-companion.pdf
 # Also: https://www.cambridge.org/core/elements/machine-learning-for-asset-managers/6D9211305EA2E425D33A9F38D0AE3545, sec 7.6
 # Refer to this resource as MLDP below.
-# With thanks to Joe for helping develop the Nested Clustered Optimization example
+# With thanks to Joe Schneider for helping develop the Nested Clustered Optimization example
+
 include("REPL_helper.jl");
 using OhMyREPL
 using VMLS, LinearAlgebra, Plots, Statistics
