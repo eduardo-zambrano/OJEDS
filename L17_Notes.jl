@@ -175,7 +175,3 @@ plot!(1:Ttest, cum_value(r_pp_test), label= "NCO")
 # 1. save the REPL session.
 save_REPL_history("L16_REPL_session.jl")
 # 2. GIT commit and GIT push at the end of class.
-
-x
-
-D
