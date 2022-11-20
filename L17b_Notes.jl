@@ -17,19 +17,14 @@ y_o = [ zeros(Bool, 50); zeros(Bool, 50); ones(Bool, 50) ]
 y = 2*y_o .-1 # Converting to +1 and -1
 
 # Set up the features matrix
-A = [ ones(150) iris ]
+X = [ ones(150) iris ]
 
 # Train the classifier
-β = A \ y
-y_tilde = A*β
+β = X \ y
+f_tilde_X = X*β
 
-yhat = y_tilde .>0
+y_hat = f_tilde_X .>0
 
-confusion_matrix(y_o,yhat)
+confusion_matrix(y_o,y_hat)
 
 # See p. 290 
-
-# Remember to 
-# 1. save the REPL session.
-save_REPL_history("L16_REPL_session.jl")
-# 2. GIT commit and GIT push at the end of class.
