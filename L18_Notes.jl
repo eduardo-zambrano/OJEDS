@@ -1,17 +1,9 @@
 ## Adapted from https://github.com/chkwon/jpor_codes/blob/master/chap2/LP1.jl ##
-## See also https://www.globaltechcouncil.org/data-science/a-quick-guide-to-linear-programming-for-data-science/
+## See also Chapter 19 in https://www.pearson.com/store/p/essential-mathematics-for-economic-analysis/P200000005528/9781292359328
 
 include("REPL_helper.jl");
 using JuMP, GLPK
 using OhMyREPL
-
-
-# Feasibility SVM, linear program
-# https://people.csail.mit.edu/dsontag/courses/ml16/slides/lecture3.pdf
-
-
-## Adapted from https://github.com/chkwon/jpor_codes/blob/master/chap2/LP1.jl ##
-## See also https://www.globaltechcouncil.org/data-science/a-quick-guide-to-linear-programming-for-data-science/
 
 # Preparing the optimization model
 m = Model(GLPK.Optimizer)
